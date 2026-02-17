@@ -4,7 +4,6 @@
   let name = "Jean Dupont";
   let job = "Développeur Fullstack";
 
-  // IDs en string pour éviter les conflits avec randomUUID()
   let experiences = [
     { id: "1", company: "Google", role: "Stagiaire", year: "2023" },
   ];
@@ -23,7 +22,7 @@
 
 <main>
   <section class="editor">
-    <h2>📝 Éditeur</h2>
+    <h2>Éditeur de CV</h2>
 
     <div class="field">
       <label for="full-name">Nom Complet</label>
@@ -69,6 +68,7 @@
   :global(html) {
     box-sizing: border-box;
     font-family: sans-serif;
+    overflow: hidden;
   }
   :global(*, *::before, *::after) {
     box-sizing: inherit;
@@ -76,23 +76,26 @@
 
   main {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 1fr 1fr;
     height: 100vh;
+    width: 100vw;
   }
 
   .editor {
-    padding: 20px;
     background: white;
-    border-right: 1px solid #ddd;
+    padding: 40px;
     overflow-y: auto;
+    height: 100%;
+    border-right: 1px solid #e0e0e0;
   }
 
   .preview {
-    padding: 40px;
     background: #f0f2f5;
+    padding: 40px;
     display: flex;
     justify-content: center;
     overflow-y: auto;
+    height: 100%;
   }
 
   .cv-paper {
@@ -112,14 +115,15 @@
     margin-bottom: 5px;
   }
   input {
-    width: 100%;
+    width: 75%;
+    margin: auto;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
 
   .btn-add {
-    width: 100%;
+    width: 75%;
     background: #4a90e2;
     color: white;
     border: none;
